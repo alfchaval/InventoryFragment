@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout
+    android:id="@+id/gridDashboard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/inventory_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:columnCount="3"
+    app:orientation="horizontal"
+    tools:context="com.example.usuario.inventory.DashboardActivity">
+
+    <!--
+
+    <ImageView
+        android:id="@+id/imageViewCloset"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/closet" />
+
+    <ImageView
+        android:id="@+id/imageViewInventory"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/inventory" />
+
+    <ImageView
+        android:id="@+id/imageViewCpu"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/cpu" />
+
+    <ImageView
+        android:id="@+id/imageViewChair"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/chair" />
+
+    <ImageView
+        android:id="@+id/imageViewKeyboard"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/keyboard" />
+
+    <ImageView
+        android:id="@+id/imageViewMonitor"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/monitor" />
+
+    <ImageView
+        android:id="@+id/imageViewMouse"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/mouse" />
+
+    <ImageView
+        android:id="@+id/imageViewPrinter"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/printer" />
+
+    <ImageView
+        android:id="@+id/imageViewProyector"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/proyector" />
+
+    <ImageView
+        android:id="@+id/imageViewTable"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/table" />
+
+    <ImageView
+        android:id="@+id/imageViewWhiteBoard"
+        android:layout_width="@dimen/imgDashboardSupport"
+        android:layout_height="@dimen/imgDashboardSupport"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_gravity="fill"
+        app:srcCompat="@drawable/whiteboard" />
+
+        -->
+
+</android.support.v7.widget.GridLayout>

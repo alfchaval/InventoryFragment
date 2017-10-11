@@ -9,4 +9,7 @@
     <dimen name="ll_remember_margin">10dp</dimen>
     <dimen name="editext_padding">5dp</dimen>
     <dimen name="inventory_padding">16dp</dimen>
+    <dimen name="imgDashboardWidth">90dp</dimen>
+    <dimen name="imgDashboardHeight">100dp</dimen>
+    <dimen name="imgDashboardSupport">0dp</dimen>
 </resources>

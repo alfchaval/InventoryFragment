@@ -6,74 +6,88 @@
     android:padding="@dimen/inventory_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:rowCount="4"
+    android:columnCount="5"
+    android:orientation="horizontal"
     tools:context="com.example.usuario.inventory.DashboardActivity">
 
     <ImageView
         android:id="@+id/imageViewCloset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/closet" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewInventory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/inventory" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewCpu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/cpu" />
 
     <ImageView
         android:id="@+id/imageViewChair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/chair" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewKeyboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/keyboard" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewMonitor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/monitor" />
 
     <ImageView
         android:id="@+id/imageViewMouse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/mouse" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewPrinter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/printer" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewProyector"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/proyector" />
 
     <ImageView
         android:id="@+id/imageViewTable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/table" />
+
+    <Space android:layout_width="30dp" />
 
     <ImageView
         android:id="@+id/imageViewWhiteBoard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/imgDashboardWidth"
+        android:layout_height="@dimen/imgDashboardHeight"
         app:srcCompat="@drawable/whiteboard" />
-
 
 </GridLayout>
