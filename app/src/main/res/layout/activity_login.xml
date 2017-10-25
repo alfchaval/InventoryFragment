@@ -52,7 +52,9 @@
         android:inputType="textPassword"
         android:padding="@dimen/editext_padding"
         android:textAppearance="@style/Widget.Editext"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:text="ContraseñaEjemplo1"
+        />
 
     <LinearLayout
         android:id="@+id/llSignUpOptions"

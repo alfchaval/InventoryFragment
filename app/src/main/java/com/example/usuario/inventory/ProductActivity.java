@@ -1,8 +1,13 @@
 package com.example.usuario.inventory;
 
-/**
- * Created by usuario on 20/10/17.
- */
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class ProductActivity {
+public class ProductActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_product);
+    }
 }
