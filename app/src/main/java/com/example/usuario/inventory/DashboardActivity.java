@@ -5,13 +5,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.util.HashMap;
 
 public class DashboardActivity extends AppCompatActivity {
 
     private GridLayout gridDashboard;
     private ClickListenerDashboard listenerDashboard;
+
+    private final int INVENTORY = R.drawable.inventory_icon;
+    private final int PRODUCT = R.drawable.product_icon;
+    private final int DEPENDENCIES = R.drawable.dependences_icon;
+    private final int SECTIONS = R.drawable.sections_icon;
+    private final int PREFERENCES = R.drawable.preferences_icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,28 +32,8 @@ public class DashboardActivity extends AppCompatActivity {
         //Definir un array de int, que contendrá el id de las imágenes Inventory
 
         int[] images = {
-                R.drawable.inventory_icon,
-                R.drawable.product_icon,
-                R.drawable.dependences_icon,
-                R.drawable.sections_icon,
-                R.drawable.preferences_icon,
+                INVENTORY, PRODUCT, DEPENDENCIES//, SECTIONS, PREFERENCES
         };
-
-        /*
-        int[] images = {
-                R.drawable.closet,
-                R.drawable.inventory,
-                R.drawable.cpu,
-                R.drawable.chair,
-                R.drawable.keyboard,
-                R.drawable.monitor,
-                R.drawable.mouse,
-                R.drawable.printer,
-                R.drawable.proyector,
-                R.drawable.table,
-                R.drawable.whiteboard
-        };
-        */
 
         //No se utiliza en Java/android array de objetos. Se utiliza Vector o Colecciones
         //ImageView[] imageViews = new ImageView[images.length];
@@ -60,8 +49,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         for (int i = 0; i < images.length; i++) {
             imageView = new ImageView(this);
-            imageView.setId(i);
             imageView.setImageResource(images[i]);
+            imageView.setId(images[i]);
             GridLayout.LayoutParams params = new GridLayout.LayoutParams();
             params.width = (int) width;
             params.height = (int) height;
@@ -79,14 +68,20 @@ public class DashboardActivity extends AppCompatActivity {
         public void onClick(View view) {
             Intent intent = null;
             switch (view.getId()) {
-                case 0:
+                case INVENTORY:
                     intent = new Intent(DashboardActivity.this, InventoryActivity.class);
                     break;
-                case 1:
+                case PRODUCT:
                     intent = new Intent(DashboardActivity.this, ProductActivity.class);
                     break;
-                case 2:
+                case DEPENDENCIES:
                     intent = new Intent(DashboardActivity.this, DependencyActivity.class);
+                    break;
+                case SECTIONS:
+                    intent = new Intent(DashboardActivity.this, null);
+                    break;
+                case PREFERENCES:
+                    intent = new Intent(DashboardActivity.this, null);
                     break;
             }
                 if(intent != null) startActivity(intent);
