@@ -1,4 +1,4 @@
-package com.example.usuario.inventory;
+package com.example.usuario.inventory.pojo;
 
 /**
  * Created by usuario on 10/25/17.
@@ -34,11 +34,11 @@ public class Dependency {
         this.name = name;
     }
 
-    public String getShortname() {
+    public String getShortName() {
         return shortname;
     }
 
-    public void setShortname(String shortname) {
+    public void setShortName(String shortname) {
         this.shortname = shortname;
     }
 

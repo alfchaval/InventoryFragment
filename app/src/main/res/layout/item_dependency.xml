@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.ivbaranov.mli.MaterialLetterIcon
+        android:id="@+id/materialLetterIcon"
+        android:layout_width="@dimen/letter_icon_size"
+        android:layout_height="@dimen/letter_icon_size"
+        android:paddingLeft="@dimen/letter_icon_padding_left"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mli_shape_color="@color/colorPrimaryDark"
+        app:mli_letter_color="@color/colorAccent"
+        app:mli_letter_size="22"
+        />
+
+    <TextView
+        android:id="@+id/txvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/materialLetterIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingLeft="@dimen/letter_icon_padding_left"
+        android:text="Texto prueba"
+        android:textSize="@dimen/primary_text"
+        />
+
+    <TextView
+        android:id="@+id/txvShortName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/list_top_padding"
+        app:layout_constraintStart_toStartOf="@id/materialLetterIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txvName"
+
+        android:paddingLeft="@dimen/letter_icon_padding_left"
+        android:text="prueba"
+        android:textSize="@dimen/secondary_text"
+        />
+
+</android.support.constraint.ConstraintLayout>
