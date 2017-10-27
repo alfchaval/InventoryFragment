@@ -9,6 +9,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * @author Alfonso Chamorro Valle
+ * Login de la aplicación
+ */
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText edtUser, edtPassword;
@@ -34,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         btnGoogleSignUp = (Button) findViewById(R.id.btnGoogleSignUp);
     }
 
+    //Método que comprueba que el Login sea correcto
     private void checkLogin(String user, String password) {
         if(password.length() < 8) {
             Toast.makeText(getApplicationContext(), "La contraseña debe contener al menos 8 caracteres", Toast.LENGTH_SHORT).show();

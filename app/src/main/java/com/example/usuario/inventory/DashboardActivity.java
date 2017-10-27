@@ -1,6 +1,5 @@
 package com.example.usuario.inventory;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +9,11 @@ import android.view.View;
 import android.widget.ImageView;
 
 import java.util.HashMap;
+
+/**
+ * @author Alfonso Chamorro Valle
+ * Menú de la aplicación
+ */
 
 public class DashboardActivity extends AppCompatActivity {
 

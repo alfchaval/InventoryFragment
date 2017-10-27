@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginLinearLayout</string>
+    <string name="app_name">Inventory</string>
     <string name="sign_in">Sign In</string>
     <string name="name_or_email">User Name/e-mail address</string>
     <string name="password">Password</string>
@@ -9,6 +9,18 @@
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
-    <string name="creation_date">Creation date</string>
+    <string name="creation_date">Creation Date</string>
     <string name="change_state">Change State</string>
+    <string name="nombre_">Name:</string>
+    <string name="serial_">Serial:</string>
+    <string name="vendedor_">Salesman:</string>
+    <string name="modelo_">Model:</string>
+    <string name="categoria_">Category:</string>
+    <string name="subcategoria_">Subcategory:</string>
+    <string name="tipo_">Type:</string>
+    <string name="descripcion_">Description:</string>
+    <string name="precio_">Prize:</string>
+    <string name="fecha_">Date:</string>
+    <string name="url_">URL:</string>
+    <string name="notas_">Notes:</string>
 </resources>

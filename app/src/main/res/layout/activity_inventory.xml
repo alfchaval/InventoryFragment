@@ -7,15 +7,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stretchColumns="0,1"
-    tools:context="com.example.usuario.inventory.InventoryActivity">
+    tools:context="com.example.usuario.inventory.InventoryActivity"
+    >
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TextView
             android:id="@+id/txvName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/name"
             />
@@ -30,11 +32,12 @@
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TextView
             android:id="@+id/txvDescription"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/description"
             />
@@ -53,7 +56,7 @@
 
         <TextView
             android:id="@+id/txvCreationDate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/creation_date"
             />

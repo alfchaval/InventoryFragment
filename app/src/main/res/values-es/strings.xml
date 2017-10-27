@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LoginLinearLayout</string>
+    <string name="app_name">Inventory</string>
     <string name="name_or_email">Nombre de usuario/dirección e-mail</string>
     <string name="password">Contraseña</string>
     <string name="remember_me">Recordarme</string>
@@ -8,4 +8,20 @@
     <string name="sign_up"><u>Iniciar sesión</u></string>
     <string name="login_with_facebook">Iniciar con Facebook</string>
     <string name="login_with_google">Iniciar con Google</string>
+    <string name="name">Nombre</string>
+    <string name="description">Descripción</string>
+    <string name="creation_date">Fecha de creación</string>
+    <string name="change_state">Cambiar estado</string>
+    <string name="nombre_">Nombre:</string>
+    <string name="serial_">Serial:</string>
+    <string name="vendedor_">Vendedor:</string>
+    <string name="modelo_">Modelo:</string>
+    <string name="categoria_">Categoría:</string>
+    <string name="subcategoria_">Subcategoría:</string>
+    <string name="tipo_">Tipo:</string>
+    <string name="descripcion_">Descripción:</string>
+    <string name="precio_">Precio:</string>
+    <string name="fecha_">Fecha:</string>
+    <string name="url_">URL:</string>
+    <string name="notas_">Notas:</string>
 </resources>

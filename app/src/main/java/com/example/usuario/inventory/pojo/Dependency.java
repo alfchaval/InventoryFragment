@@ -1,7 +1,8 @@
 package com.example.usuario.inventory.pojo;
 
 /**
- * Created by usuario on 10/25/17.
+ * @author Alfonso Chamorro Valle
+ * Clase pojo de las dependencias
  */
 
 public class Dependency {

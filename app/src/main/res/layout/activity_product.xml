@@ -22,21 +22,25 @@
 
         <android.support.constraint.Barrier
             android:id="@+id/barrier"
-            android:layout_width="wrap_content"
+            app:barrierDirection="left"
+            android:layout_width="1dp"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/txvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre:"
+            android:text="@string/nombre_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imvInformation" />
 
         <EditText
             android:id="@+id/edtName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             app:layout_constraintBaseline_toBaselineOf="@id/txvName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -45,14 +49,18 @@
             android:id="@+id/txvSerial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Serial:"
+            android:layout_marginTop="10dp"
+            android:text="@string/serial_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txvName" />
 
         <EditText
             android:id="@+id/edtSerial"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             app:layout_constraintBaseline_toBaselineOf="@id/txvSerial"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -61,7 +69,10 @@
             android:id="@+id/txvVendor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vendedor:"
+            android:text="@string/vendedor_"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintTop_toBottomOf="@id/txvSerial" />
 
@@ -69,6 +80,7 @@
             android:id="@+id/edtVendor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             app:layout_constraintBaseline_toBaselineOf="@id/txvVendor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -77,14 +89,18 @@
             android:id="@+id/txvModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modelo:"
+            android:layout_marginTop="10dp"
+            android:text="@string/modelo_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txvVendor" />
 
         <EditText
             android:id="@+id/edtModel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             app:layout_constraintBaseline_toBaselineOf="@id/txvModel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -93,14 +109,18 @@
             android:id="@+id/txvCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categoría:"
+            android:layout_marginTop="10dp"
+            android:text="@string/categoria_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txvModel" />
 
         <Spinner
             android:id="@+id/edtCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:entries="@array/category"
             app:layout_constraintBaseline_toBaselineOf="@id/txvCategory"
             app:layout_constraintEnd_toEndOf="parent"
@@ -110,14 +130,18 @@
             android:id="@+id/txvSubcategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subcategoría:"
+            android:layout_marginTop="10dp"
+            android:text="@string/subcategoria_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txvCategory" />
 
         <Spinner
             android:id="@+id/edtSubcategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:entries="@array/subcategory"
             app:layout_constraintBaseline_toBaselineOf="@id/txvSubcategory"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,14 +151,18 @@
             android:id="@+id/txvType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tipo:"
+            android:layout_marginTop="10dp"
+            android:text="@string/tipo_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txvSubcategory" />
 
         <Spinner
             android:id="@+id/edtType"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:entries="@array/type"
             app:layout_constraintBaseline_toBaselineOf="@id/txvType"
             app:layout_constraintEnd_toEndOf="parent"
@@ -144,17 +172,22 @@
             android:id="@+id/txvDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descripción:"
+            android:layout_marginTop="10dp"
+            android:text="@string/descripcion_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txvType" />
 
         <EditText
             android:id="@+id/edtDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginTop="10dp"
             android:inputType="textMultiLine"
             android:lines="8"
-            app:layout_constraintBaseline_toBaselineOf="@+id/txvDescription"
+            app:layout_constraintTop_toBottomOf="@+id/edtType"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
 
@@ -162,6 +195,8 @@
             android:id="@+id/edtPrice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/edtDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -170,7 +205,7 @@
             android:id="@+id/txvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Precio:"
+            android:text="@string/precio_"
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintBaseline_toBaselineOf="@+id/edtPrice"
              />
@@ -179,7 +214,8 @@
             android:id="@+id/txvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha:"
+            android:text="@string/fecha_"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintTop_toBottomOf="@id/txvPrice" />
 
@@ -187,6 +223,7 @@
             android:id="@+id/edtDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             app:layout_constraintBaseline_toBaselineOf="@+id/txvDate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -195,7 +232,8 @@
             android:id="@+id/txvURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="URL:"
+            android:text="@string/url_"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toStartOf="@+id/edtURL"
             app:layout_constraintTop_toBottomOf="@id/txvDate" />
 
@@ -203,6 +241,7 @@
             android:id="@id/edtURL"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             app:layout_constraintBaseline_toBaselineOf="@+id/txvURL"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/txvURL" />
@@ -211,17 +250,18 @@
             android:id="@+id/txvNotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notas:"
+            android:text="@string/notas_"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/txvURL" />
 
         <EditText
             android:id="@+id/edtNotes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:inputType="textMultiLine"
             android:lines="8"
             app:layout_constraintTop_toBottomOf="@id/txvNotes"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
              />
 

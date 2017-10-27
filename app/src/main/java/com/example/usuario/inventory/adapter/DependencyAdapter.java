@@ -15,7 +15,7 @@ import com.example.usuario.inventory.repository.DependencyRepository;
 import com.github.ivbaranov.mli.MaterialLetterIcon;
 
 /**
- * Created by usuario on 10/26/17.
+ * @author Alfonso Chamorro Valle
  */
 
 public class DependencyAdapter extends ArrayAdapter<Dependency> {

@@ -8,7 +8,7 @@ import com.example.usuario.inventory.repository.DependencyRepository;
 import java.util.ArrayList;
 
 /**
- * Created by usuario on 10/25/17.
+ * @author Alfonso Chamorro Valle
  */
 
 public class InventoryApplication extends Application {

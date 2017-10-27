@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+/**
+ * @author Alfonso Chamorro Valle
+ * Splash al iniciar la aplicación
+ */
+
 public class SplashActivity extends AppCompatActivity {
 
     private int delay = 2000;

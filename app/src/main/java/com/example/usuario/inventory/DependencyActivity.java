@@ -8,6 +8,11 @@ import com.example.usuario.inventory.adapter.DependencyAdapter;
 import com.example.usuario.inventory.pojo.Dependency;
 import com.example.usuario.inventory.repository.DependencyRepository;
 
+/**
+ * @author Alfonso Chamorro Valle
+ * Activity con una lista
+ */
+
 public class DependencyActivity extends ListActivity {
 
     //private ArrayAdapter<Dependency> dependencies;
