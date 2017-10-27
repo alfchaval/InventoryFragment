@@ -23,7 +23,7 @@
         <android.support.constraint.Barrier
             android:id="@+id/barrier"
             app:barrierDirection="left"
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -120,7 +120,6 @@
             android:id="@+id/edtCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
             android:entries="@array/category"
             app:layout_constraintBaseline_toBaselineOf="@id/txvCategory"
             app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +140,6 @@
             android:id="@+id/edtSubcategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
             android:entries="@array/subcategory"
             app:layout_constraintBaseline_toBaselineOf="@id/txvSubcategory"
             app:layout_constraintEnd_toEndOf="parent"
@@ -162,7 +160,6 @@
             android:id="@+id/edtType"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
             android:entries="@array/type"
             app:layout_constraintBaseline_toBaselineOf="@id/txvType"
             app:layout_constraintEnd_toEndOf="parent"

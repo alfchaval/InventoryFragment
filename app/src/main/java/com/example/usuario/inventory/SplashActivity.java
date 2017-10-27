@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private int delay = 2000;
+    private int delay = 1234;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
