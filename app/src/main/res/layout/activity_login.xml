@@ -70,8 +70,7 @@
             android:layout_weight="1"
             android:checked="true"
             android:text="@string/remember_me"
-            android:theme="@style/Widget.CheckBox"
-            android:textColor="@android:color/white"
+            android:theme="@style/CheckBox_RememberMe"
             />
 
         <TextView
@@ -82,7 +81,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:textAlignment="viewEnd"
-            android:textAppearance="@style/LoginTheme"
+            android:textAppearance="@android:style/TextAppearance.Small.Inverse"
             />
 
     </LinearLayout>
@@ -109,7 +108,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_with_google"
-        android:background="@drawable/google_bar"
+        android:drawableLeft="@mipmap/ic_google"
+        android:drawableStart="@mipmap/ic_google"
+        android:background="@color/colorGoogle"
         android:textAppearance="@style/LoginTheme"
         android:layout_marginBottom="@dimen/txv_google_margin"
         />
@@ -120,7 +121,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_with_facebook"
-        android:background="@drawable/facebook_bar"
+        android:drawableLeft="@mipmap/ic_facebook"
+        android:drawableStart="@mipmap/ic_facebook"
+        android:background="@color/colorFacebook"
         android:textAppearance="@style/LoginTheme"
         />
 

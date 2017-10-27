@@ -97,10 +97,11 @@
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintTop_toBottomOf="@id/txvModel" />
 
-        <EditText
+        <Spinner
             android:id="@+id/edtCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:entries="@array/category"
             app:layout_constraintBaseline_toBaselineOf="@id/txvCategory"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -113,10 +114,11 @@
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintTop_toBottomOf="@id/txvCategory" />
 
-        <EditText
+        <Spinner
             android:id="@+id/edtSubcategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:entries="@array/subcategory"
             app:layout_constraintBaseline_toBaselineOf="@id/txvSubcategory"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />
@@ -129,10 +131,11 @@
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintTop_toBottomOf="@id/txvSubcategory" />
 
-        <EditText
+        <Spinner
             android:id="@+id/edtType"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:entries="@array/type"
             app:layout_constraintBaseline_toBaselineOf="@id/txvType"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/barrier" />

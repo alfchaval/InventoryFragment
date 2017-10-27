@@ -29,10 +29,9 @@
         <item name="android:textSize">16dp</item>
     </style>
 
-    <style name="Widget.CheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
-        <item name="colorControlHighlight">@android:color/white</item>
-        <item name="colorControlNormal">@android:color/white</item>
-        <item name="colorControlActivated">@android:color/white</item>
+    <style name="CheckBox_RememberMe" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:checkboxStyle">@color/colorGrey</item>
         <item name="buttonTint">@color/colorGrey</item>
         <item name="android:textSize">16dp</item>
     </style>

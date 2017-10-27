@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>categoría 1</item>
+        <item>categoría 2</item>
+        <item>categoría 3</item>
+    </string-array>
+
+    <string-array name="subcategory">
+        <item>Subcategoría 1</item>
+        <item>Subategoría 2</item>
+        <item>Subcategoría 3</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>Tipo 1</item>
+        <item>Tipo 2</item>
+        <item>Tipo 3</item>
+    </string-array>
+</resources>
