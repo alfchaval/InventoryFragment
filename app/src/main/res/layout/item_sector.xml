@@ -5,18 +5,15 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.github.ivbaranov.mli.MaterialLetterIcon
-        android:id="@+id/materialLetterIcon"
-        android:layout_width="@dimen/letter_icon_size"
-        android:layout_height="@dimen/letter_icon_size"
-        android:paddingLeft="@dimen/letter_icon_padding_left"
+    <Switch
+        android:id="@+id/switchSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:mli_shape_color="@color/colorPrimaryDark"
-        app:mli_letter_color="@color/colorAccent"
-        app:mli_letter_size="22"
+        android:enabled="true"
         />
 
     <TextView
@@ -26,7 +23,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/materialLetterIcon"
+        app:layout_constraintStart_toEndOf="@id/switchSelector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:paddingLeft="@dimen/letter_icon_padding_left"
@@ -35,18 +32,17 @@
         />
 
     <TextView
-        android:id="@+id/txvShortName"
+        android:id="@+id/txvDefault"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="@dimen/list_top_padding"
-        app:layout_constraintStart_toStartOf="@id/materialLetterIcon"
+        app:layout_constraintStart_toEndOf="@id/switchSelector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txvName"
-
         android:paddingLeft="@dimen/letter_icon_padding_left"
-        android:text="prueba"
+        android:text="@string/txtDefault"
         android:textSize="@dimen/secondary_text"
         />
 

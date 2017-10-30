@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.usuario.inventory.DependencyActivity"
+    tools:context="com.example.usuario.inventory.SectorActivity"
     >
 
-    <!-- EL LISTVIEW NECESITA EL ID DE ANDROID -->
-
-    <ListView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvSector"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@android:id/list"
         android:paddingTop="@dimen/list_top_padding"
         />
 

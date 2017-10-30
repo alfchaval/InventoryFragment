@@ -36,7 +36,7 @@ public class DashboardActivity extends AppCompatActivity {
         //Definir un array de int, que contendrá el id de las imágenes Inventory
 
         int[] images = {
-                INVENTORY, PRODUCT, DEPENDENCIES//, SECTIONS, PREFERENCES
+                INVENTORY, PRODUCT, DEPENDENCIES, SECTIONS//, PREFERENCES
         };
 
         //No se utiliza en Java/android array de objetos. Se utiliza Vector o Colecciones
@@ -82,7 +82,7 @@ public class DashboardActivity extends AppCompatActivity {
                     intent = new Intent(DashboardActivity.this, DependencyActivity.class);
                     break;
                 case SECTIONS:
-                    intent = new Intent(DashboardActivity.this, null);
+                    intent = new Intent(DashboardActivity.this, SectorActivity.class);
                     break;
                 case PREFERENCES:
                     intent = new Intent(DashboardActivity.this, null);

@@ -23,4 +23,6 @@
     <string name="fecha_">Date:</string>
     <string name="url_">URL:</string>
     <string name="notas_">Notes:</string>
+    <string name="txtDefault">default</string>
+    <string name="menu_save">menu_save</string>
 </resources>

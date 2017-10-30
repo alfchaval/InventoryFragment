@@ -24,6 +24,7 @@
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ProductActivity"/>
         <activity android:name=".DependencyActivity"/>
+        <activity android:name=".SectorActivity"/>
     </application>
 
 </manifest>

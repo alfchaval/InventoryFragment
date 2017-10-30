@@ -1,7 +1,8 @@
 package com.example.usuario.inventory.repository;
 
 /**
- * Created by usuario on 10/26/17.
+ * @author Alfonso Chamorro Valle
+ * Repositorio de productos
  */
 
 public class ProductRepository {

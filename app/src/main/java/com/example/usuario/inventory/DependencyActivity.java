@@ -10,7 +10,7 @@ import com.example.usuario.inventory.repository.DependencyRepository;
 
 /**
  * @author Alfonso Chamorro Valle
- * Activity con una lista
+ * Activity con una lista de dependencias
  */
 
 public class DependencyActivity extends ListActivity {
