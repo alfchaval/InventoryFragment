@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 
@@ -19,6 +20,7 @@ public class SectorActivity extends AppCompatActivity {
 
     private RecyclerView recyclerSector;
     private SectorAdapter sectorAdapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,15 @@ public class SectorActivity extends AppCompatActivity {
         recyclerSector = (RecyclerView) findViewById(R.id.rvSector);
         recyclerSector.setHasFixedSize(true);
         recyclerSector.setLayoutManager(new GridLayoutManager(this, 2));
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         if(savedInstanceState != null) {
             sectorAdapter = new SectorAdapter(savedInstanceState.<Sector>getParcelableArrayList("sector"));
         }
         else {
-
+            sectorAdapter = new SectorAdapter();
         }
-
-        sectorAdapter = new SectorAdapter();
         recyclerSector.setAdapter(sectorAdapter);
     }
 

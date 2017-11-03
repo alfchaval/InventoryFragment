@@ -24,4 +24,7 @@
     <string name="url_">URL:</string>
     <string name="notas_">Notes:</string>
     <string name="txtDefault">default</string>
+    <string name="hint_nombre">Escriba el nombre</string>
+    <string name="hint_description">Escriba la descripción</string>
+    <string name="hint_shortname">Escriba el nombre corto</string>
 </resources>

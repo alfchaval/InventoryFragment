@@ -34,6 +34,28 @@ public class DependencyRepository {
                 "1CFGS Desarrollo de aplicaciones multiplataforma"));
         addDependency(new Dependency(2, "2º Ciclo Formativo Grado Superior", "2CFGS",
                 "2CFGS Desarrollo de aplicaciones multiplataforma"));
+        addDependency(new Dependency(3, "Ejemplo 3", "EJ3",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(4, "Ejemplo 4", "EJ4",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(5, "Ejemplo 5", "EJ5",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(6, "Ejemplo 6", "EJ6",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(7, "Ejemplo 7", "EJ7",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(8, "Ejemplo 8", "EJ8",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(9, "Ejemplo 9", "EJ9",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(10, "Ejemplo 10", "EJ10",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(11, "Ejemplo 11", "EJ11",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(12, "Ejemplo 12", "EJ12",
+                "Esto es un ejemplo"));
+        addDependency(new Dependency(13, "Ejemplo 13", "EJ13",
+                "Esto es un ejemplo"));
     }
 
     /* Métodos */

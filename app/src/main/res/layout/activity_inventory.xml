@@ -43,7 +43,7 @@
             />
 
         <EditText
-            android:id="@+id/edtDescription"
+            android:id="@+id/edtShortName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />

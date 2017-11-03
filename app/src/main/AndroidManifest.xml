@@ -28,6 +28,7 @@
         <activity android:name=".GeneralSettingsActivity"/>
         <activity android:name=".AccountSettingsActivity"/>
         <activity android:name=".AboutUsActivity"/>
+        <activity android:name=".AddDependencyActivity"/>
     </application>
 
 </manifest>
