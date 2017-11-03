@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_category_general">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="showimage"
+            android:title="@string/pref_title_showimage"
+            android:summary="@string/pref_summary_showimage"
+            android:summaryOn="@string/pref_summaryOn_showimage"
+            android:summaryOff="@string/pref_summaryOff_showimage"
+            />
+
+        <ListPreference
+            android:key="numcolumn"
+            android:title="@string/pref_title_numcolumn"
+            android:summary="@string/pref_summary_numcolumn"
+            android:entries="@array/pref_entries_numcolumn"
+            android:entryValues="@array/pref_entrievalues_numcolumn"
+            android:defaultValue="1"
+            />
+
+    </PreferenceCategory>
+
+    <Preference
+        android:key="aboutus"
+        android:title="@string/pref_title_aboutus"
+        >
+        <intent
+            android:targetClass="com.example.usuario.inventory.AboutUsActivity"
+            android:targetPackage="com.example.usuario.inventory"
+            />
+
+    </Preference>
+
+</PreferenceScreen>

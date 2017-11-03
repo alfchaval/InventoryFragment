@@ -109,14 +109,22 @@ public class Sector implements Parcelable {
         parcel.writeString(_shortname);
         parcel.writeString(_description);
         parcel.writeInt(_dependencyId);
-        parcel.writeByte(_enabled);
-        parcel.writeByte(_default);
+        parcel.writeByte((byte) (_enabled ? 1 : 0));
+        parcel.writeByte((byte) (_default ? 1 : 0));
     }
 
     public static final Creator<Sector> CREATOR = new Creator<Sector>() {
         @Override
         public Sector createFromParcel(Parcel parcel) {
-            return new Sector(parcel);
+            return new Sector(
+                    parcel.readInt(),
+                    parcel.readString(),
+                    parcel.readString(),
+                    parcel.readString(),
+                    parcel.readInt(),
+                    parcel.readByte() == 1,
+                    parcel.readByte() == 1
+                    );
         }
 
         @Override

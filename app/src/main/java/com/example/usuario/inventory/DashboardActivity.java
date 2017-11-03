@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
-import android.util.Pair;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-
-import java.util.HashMap;
 
 /**
  * @author Alfonso Chamorro Valle
@@ -23,7 +23,7 @@ public class DashboardActivity extends AppCompatActivity {
     private final int INVENTORY = R.drawable.inventory_icon;
     private final int PRODUCT = R.drawable.product_icon;
     private final int DEPENDENCIES = R.drawable.dependences_icon;
-    private final int SECTIONS = R.drawable.sections_icon;
+    private final int SECTOR = R.drawable.sector_icon;
     private final int PREFERENCES = R.drawable.preferences_icon;
 
     @Override
@@ -36,7 +36,7 @@ public class DashboardActivity extends AppCompatActivity {
         //Definir un array de int, que contendrá el id de las imágenes Inventory
 
         int[] images = {
-                INVENTORY, PRODUCT, DEPENDENCIES, SECTIONS//, PREFERENCES
+                INVENTORY, PRODUCT, DEPENDENCIES, SECTOR//, PREFERENCES
         };
 
         //No se utiliza en Java/android array de objetos. Se utiliza Vector o Colecciones
@@ -81,7 +81,7 @@ public class DashboardActivity extends AppCompatActivity {
                 case DEPENDENCIES:
                     intent = new Intent(DashboardActivity.this, DependencyActivity.class);
                     break;
-                case SECTIONS:
+                case SECTOR:
                     intent = new Intent(DashboardActivity.this, SectorActivity.class);
                     break;
                 case PREFERENCES:
@@ -90,5 +90,25 @@ public class DashboardActivity extends AppCompatActivity {
             }
                 if(intent != null) startActivity(intent);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_activity_dashboard, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_account_settings:
+                startActivity(new Intent(DashboardActivity.this, AccountSettingsActivity.class));
+                break;
+            case R.id.action_general_settings:
+                startActivity(new Intent(DashboardActivity.this, GeneralSettingsActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

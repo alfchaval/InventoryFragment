@@ -59,9 +59,8 @@ public class SectorAdapter extends RecyclerView.Adapter<SectorAdapter.SectorView
     public void onBindViewHolder(SectorViewHolder sectorViewHolder, int position) {
         sectorViewHolder.switchSelector.setChecked(sectors.get(position).is_enabled());
         sectorViewHolder.txvName.setText(sectors.get(position).get_name());
-        if(sectors.get(position).is_default()) sectorViewHolder.txvDefault.setText(R.string.txtDefault);
-        else sectorViewHolder.txvDefault.setText("");
-
+        mostrarIsDefault(sectors.get(position).is_default(), sectorViewHolder.txvDefault);
+        //TODO que se guarde el estado al girar la pantalla
     }
 
     @Override
@@ -77,9 +76,10 @@ public class SectorAdapter extends RecyclerView.Adapter<SectorAdapter.SectorView
 
         public SectorViewHolder(View view) {
             super(view);
-            switchSelector = (Switch) view.findViewById(R.id.switchSelector);
             txvName = (TextView) view.findViewById(R.id.txvName);
             txvDefault = (TextView) view.findViewById(R.id.txvDefault);
+            switchSelector = (Switch) view.findViewById(R.id.switchSelector);
+            switchSelector.setOnCheckedChangeListener(new OnSwitchCheckedChangeListener(txvDefault, switchSelector.isChecked()));
         }
     }
 
@@ -92,11 +92,31 @@ public class SectorAdapter extends RecyclerView.Adapter<SectorAdapter.SectorView
         return sectorsModified;
     }
 
-    class OnSwitchCheckedChangeListener implements CompoundButton.OnCheckedChangeListener {
+    /**
+     * Listener para los switch
+     */
+    static class OnSwitchCheckedChangeListener implements CompoundButton.OnCheckedChangeListener {
+
+        private TextView txv;
+        private boolean checked;
+
+        public OnSwitchCheckedChangeListener(TextView txv, boolean checked) {
+            this.txv = txv;
+            this.checked = checked;
+        }
+
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-            if(sectors.get(position).is_default()) sectorViewHolder.txvDefault.setText(R.string.txtDefault);
-            else sectorViewHolder.txvDefault.setText("");
+            checked = !checked;
+            mostrarIsDefault(checked, txv);
         }
+    }
+
+    /**
+     * Este método muestra u oculta el texto que indica si el switch está en la opción por defecto.
+     */
+    private static void mostrarIsDefault(boolean mostrar, TextView texto) {
+        if(mostrar) texto.setText(R.string.txtDefault);
+        else texto.setText("");
     }
 }

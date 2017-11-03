@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="@string/menu_save"
-        android:id="@+id/menu_save"
+        android:title="@string/action_save"
+        android:id="@+id/action_save"
         app:showAsAction="ifRoom"
         android:icon="@mipmap/ic_icon"/>
 </menu>
