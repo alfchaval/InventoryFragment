@@ -1,11 +1,8 @@
-package com.example.usuario.inventory;
+package com.example.usuario.inventory.ui.inventory;
 
 import android.app.Application;
 
-import com.example.usuario.inventory.pojo.Dependency;
-import com.example.usuario.inventory.repository.DependencyRepository;
-
-import java.util.ArrayList;
+import com.example.usuario.inventory.db.repository.DependencyRepository;
 
 /**
  * @author Alfonso Chamorro Valle

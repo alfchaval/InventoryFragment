@@ -10,6 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.usuario.inventory.ui.dependency.DependencyActivity;
+import com.example.usuario.inventory.ui.inventory.InventoryActivity;
+import com.example.usuario.inventory.ui.prefs.AccountSettingsActivity;
+import com.example.usuario.inventory.ui.prefs.GeneralSettingsActivity;
+import com.example.usuario.inventory.ui.product.ProductActivity;
+import com.example.usuario.inventory.ui.sector.SectorActivity;
+
 /**
  * @author Alfonso Chamorro Valle
  * Menú de la aplicación

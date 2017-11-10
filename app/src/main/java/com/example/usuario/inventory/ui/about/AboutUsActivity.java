@@ -1,8 +1,9 @@
-package com.example.usuario.inventory;
+package com.example.usuario.inventory.ui.about;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
+import com.example.usuario.inventory.R;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
 

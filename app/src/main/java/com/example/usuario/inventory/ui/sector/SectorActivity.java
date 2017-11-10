@@ -1,4 +1,4 @@
-package com.example.usuario.inventory;
+package com.example.usuario.inventory.ui.sector;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 
+import com.example.usuario.inventory.R;
 import com.example.usuario.inventory.adapter.SectorAdapter;
 import com.example.usuario.inventory.pojo.Sector;
 

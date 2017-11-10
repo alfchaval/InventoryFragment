@@ -1,4 +1,4 @@
-package com.example.usuario.inventory.repository;
+package com.example.usuario.inventory.db.repository;
 
 /**
  * @author Alfonso Chamorro Valle

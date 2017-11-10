@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.usuario.inventory.ui.login.LoginActivity;
+
 /**
  * @author Alfonso Chamorro Valle
  * Splash al iniciar la aplicación

@@ -1,4 +1,4 @@
-package com.example.usuario.inventory.repository;
+package com.example.usuario.inventory.db.repository;
 
 import com.example.usuario.inventory.pojo.Dependency;
 

@@ -1,8 +1,10 @@
-package com.example.usuario.inventory;
+package com.example.usuario.inventory.ui.dependency;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.usuario.inventory.R;
 
 /**
  * @author Alfonso Chamorro Valle
