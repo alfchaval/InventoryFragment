@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.usuario.inventory.ui.login.LoginActivity;
+import com.example.usuario.inventory.ui.login.LoginViewImpl;
 
 /**
  * @author Alfonso Chamorro Valle
@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                startActivity(new Intent(SplashActivity.this, LoginViewImpl.class));
             }
         }, delay);
 

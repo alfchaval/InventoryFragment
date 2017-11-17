@@ -1,8 +1,6 @@
 package com.example.usuario.inventory;
 
-import android.content.Context;
 import android.support.annotation.StringRes;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -17,7 +15,6 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.junit.Assert.*;
 
 /**
  * Instrumentation test, which will execute on an Android device.
@@ -32,7 +29,7 @@ public class LoginInstrumentedTest {
      */
     @Test
     public void isUserEmpty(){
-        onView(withId(R.id.btnSignUp)).perform(click());
+        onView(withId(R.id.btnSignIn)).perform(click());
         checkSnackBarDisplayByMessage(R.string.errorUserEmpty);
     }
 
@@ -41,7 +38,7 @@ public class LoginInstrumentedTest {
      */
     @Test
     public void isEmailEmpty(){
-        onView(withId(R.id.btnSignUp)).perform(click());
+        onView(withId(R.id.btnSignIn)).perform(click());
         checkSnackBarDisplayByMessage(R.string.errorPasswordEmpty);
     }
 
@@ -60,7 +57,7 @@ public class LoginInstrumentedTest {
     public void passwordLength(){
         onView(withId(R.id.edtUser)).perform(typeText("alfchaval"),closeSoftKeyboard());
         onView(withId(R.id.edtPassword)).perform(typeText("fail"),closeSoftKeyboard());
-        onView(withId(R.id.btnSignUp)).perform(click());
+        onView(withId(R.id.btnSignIn)).perform(click());
         checkSnackBarDisplayByMessage(R.string.errorPasswordLength);
     }
 
@@ -72,7 +69,7 @@ public class LoginInstrumentedTest {
         onView(withId(R.id.edtUser)).perform(typeText("alfchaval"),closeSoftKeyboard());
         onView(withId(R.id.edtPassword)).perform(typeText("Aa1111."),closeSoftKeyboard());
         //onView(withId(R.id.edtPassword2)).perform(typeText("Aa1111."),closeSoftKeyboard());
-        onView(withId(R.id.btnSignUp)).perform(click());
+        onView(withId(R.id.btnSignIn)).perform(click());
         //checkSnackBarDisplayByMessage(R.string.errorPasswordDoubleCheck);
     }
 

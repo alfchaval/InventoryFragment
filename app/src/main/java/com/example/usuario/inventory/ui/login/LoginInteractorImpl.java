@@ -1,22 +1,30 @@
 package com.example.usuario.inventory.ui.login;
 
+import android.text.TextUtils;
+
+import com.example.usuario.inventory.ui.utils.CommonUtils;
+
 /**
- * Created by usuario on 11/10/17.
+ * @author Alfonso Chamorro Valle
+ * Interactor del Login
  */
 
 public class LoginInteractorImpl implements LoginInteractor {
 
     @Override
-    public void validateCredentials(String user, String password, LoginInteractor.OnLoginFinishedListener) {
+    public void validateCredentials(String user, String password, OnLoginFinishedListener listener) {
 
-        //Si el password está vacío
-        if listener.onPasswordEmptyError();
-        if (user == "") {
-            listener.onUserEmptyError;
+        if(TextUtils.isEmpty(user)) {
+            listener.onUserEmptyError();
         }
-        else if (password == "") {
-
+        else if(TextUtils.isEmpty(password)) {
+            listener.onPasswordEmptyError();
         }
-
+        else if(!CommonUtils.isPasswordValid(password)) {
+            listener.onPasswordError();
+        }
+        else {
+            listener.onSuccess();
+        }
     }
 }

@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.LoginActivity"/>
+        <activity android:name=".ui.login.LoginViewImpl"/>
         <activity android:name=".ui.inventory.InventoryActivity"/>
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ui.product.ProductActivity"/>

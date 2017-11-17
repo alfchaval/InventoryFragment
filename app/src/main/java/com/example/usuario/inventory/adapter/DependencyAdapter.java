@@ -14,26 +14,29 @@ import com.example.usuario.inventory.pojo.Dependency;
 import com.example.usuario.inventory.db.repository.DependencyRepository;
 import com.github.ivbaranov.mli.MaterialLetterIcon;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 /**
  * @author Alfonso Chamorro Valle
  */
 
 public class DependencyAdapter extends ArrayAdapter<Dependency> {
-    /**
-     public DependencyAdapter(@NonNull Context context, int resource, @NonNull Dependency[] objetcs) {
-     super(context, R.layout.item_dependency, DependencyRepository.getInstance().getDependencies());
-     }*/
 
+    /**
+     * Se crea una copia del ArrayList que se tiene en DependencyRepository para tener
+     * una copia local en el adapter que se pueda cambiar sin modificar los datos originales
+     * @param context
+     */
     public DependencyAdapter(@NonNull Context context) {
         super(context, R.layout.item_dependency, DependencyRepository.getInstance().getDependencies());
+        //sort(new Dependency.DependencyOrderByShortName());
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        MaterialLetterIcon icon;
-        TextView txvName;
-        TextView txvShortName;
         DependencyHolder dependencyHolder;
         View view = convertView;
 

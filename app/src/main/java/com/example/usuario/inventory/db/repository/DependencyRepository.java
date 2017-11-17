@@ -3,6 +3,8 @@ package com.example.usuario.inventory.db.repository;
 import com.example.usuario.inventory.pojo.Dependency;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * @author Alfonso Chamorro Valle
@@ -77,6 +79,10 @@ public class DependencyRepository {
     }
 
     public ArrayList<Dependency> getDependencies() {
+        /**
+         * El ArrayList se ordena según el criterio del método compareTo de la interfaz Comparable
+         */
+        Collections.sort(dependencies);
         return dependencies;
     }
 }

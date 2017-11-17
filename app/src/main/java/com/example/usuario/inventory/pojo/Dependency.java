@@ -1,11 +1,15 @@
 package com.example.usuario.inventory.pojo;
 
+import android.support.annotation.NonNull;
+
+import java.util.Comparator;
+
 /**
  * @author Alfonso Chamorro Valle
  * Clase pojo de las dependencias
  */
 
-public class Dependency {
+public class Dependency  implements Comparable{
 
     private int _ID;
     private String name;
@@ -54,5 +58,18 @@ public class Dependency {
     @Override
     public String toString() {
         return "NAME: " + name + '\n' + "SHORTNAME: " + shortname + '\n' + "DESCRIPTION: " + description;
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+        return name.compareTo(((Dependency)o).name);
+    }
+
+    public static class DependencyOrderByShortName implements Comparator<Dependency> {
+
+        @Override
+        public int compare(Dependency d1, Dependency d2) {
+            return d1.shortname.toLowerCase().compareTo(d2.shortname.toLowerCase());
+        }
     }
 }

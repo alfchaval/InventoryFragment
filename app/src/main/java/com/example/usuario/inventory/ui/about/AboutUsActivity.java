@@ -36,6 +36,6 @@ public class AboutUsActivity extends AppCompatActivity {
                 .setShowAsCard(true)
                 .build();
 
-        addContentView(view, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        addContentView(view, view.getLayoutParams());
     }
 }

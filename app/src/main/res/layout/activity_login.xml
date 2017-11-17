@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.usuario.inventory.SplashActivity"
     android:background="@color/colorPrimary"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/content">
 
     <TextView
         android:id="@+id/txvSignIn"
@@ -35,7 +36,9 @@
         android:padding="@dimen/editext_padding"
         android:textAppearance="@style/Widget.Editext"
         android:layout_marginBottom="@dimen/txv_user_margin"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:text="usuario"
+        />
 
     <TextView
         android:id="@+id/txvPassword"
@@ -92,7 +95,7 @@
     -->
     <Button
         style="@style/Widget.Button.Transparent"
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnSignIn"
         android:layout_gravity="center_horizontal"
         android:layout_width="@dimen/sign_in_button_width"
         android:layout_height="wrap_content"
@@ -103,7 +106,7 @@
     />
 
     <Button
-        android:id="@+id/btnGoogleSignUp"
+        android:id="@+id/btnGoogleSignIn"
         style="@style/Widget.Button.Transparent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -116,7 +119,7 @@
         />
 
     <Button
-        android:id="@+id/btnFacebookSignUp"
+        android:id="@+id/btnFacebookSignIn"
         style="@style/Widget.Button.Transparent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

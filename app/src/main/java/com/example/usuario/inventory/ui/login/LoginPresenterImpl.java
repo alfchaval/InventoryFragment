@@ -13,7 +13,8 @@ import com.example.usuario.inventory.DashboardActivity;
 import com.example.usuario.inventory.R;
 
 /**
- * Created by usuario on 11/10/17.
+ * @author Alfonso Chamorro Valle
+ * Presentador del Login
  */
 
 public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnLoginFinishedListener {
@@ -28,40 +29,7 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnLog
 
     @Override
     public void validateCredentials(String user, String password) {
-
         loginInteractor.validateCredentials(user, password, this);
-        loginView.navigateToHome();
-
-        /**
-        //Método que comprueba que el Login sea correcto
-        private void checkLogin(String user, String password) {
-            if(password.length() < 8) {
-                Toast.makeText(getApplicationContext(), "La contraseña debe contener al menos 8 caracteres", Toast.LENGTH_SHORT).show();
-            }
-            boolean minus = false;
-            boolean mayus = false;
-            boolean digit = false;
-            for (int i = 0; i < password.length(); i++) {
-                if(!minus && Character.isLowerCase(password.charAt(i))) minus = true;
-                if(!mayus && Character.isUpperCase(password.charAt(i))) mayus = true;
-                if(!digit && Character.isDigit(password.charAt(i))) digit = true;
-            }
-            if(!digit) {
-                Toast.makeText(getApplicationContext(), "La contraseña debe contener al menos un número", Toast.LENGTH_SHORT).show();
-            }
-            else if (!mayus) {
-                Toast.makeText(getApplicationContext(), "La contraseña debe contener al menos una mayúscula", Toast.LENGTH_SHORT).show();
-            }
-            else if (!minus) {
-                Toast.makeText(getApplicationContext(), "La contraseña debe contener al menos una minúscula", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-                startActivity(intent);
-            }
-
-        }
-         */
     }
 
     @Override
@@ -70,12 +38,23 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnLog
     }
 
     @Override
-    public void onUserPasswordEmptyError() {
+    public void onPasswordEmptyError() {
         loginView.setPasswordEmptyError();
     }
 
     @Override
-    public void onUserPasswordError() {
+    public void onPasswordError() {
         loginView.setPasswordError();
+    }
+
+    @Override
+    public void onDestroy() {
+        this.loginView = null;
+        this.loginInteractor = null;
+    }
+
+    @Override
+    public void onSuccess() {
+        loginView.navigateToHome();
     }
 }
