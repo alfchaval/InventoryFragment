@@ -20,7 +20,7 @@ public class AddEditDependency extends Fragment implements AddEditDependencyCont
 
     AddEditDependencyContract.Presenter presenter;
 
-    public static Fragment newInstance(Bundle arguments) {
+    public static AddEditDependency newInstance(Bundle arguments) {
         AddEditDependency addEditDependency = new AddEditDependency();
         if(arguments != null) {
             addEditDependency.setArguments(arguments);
