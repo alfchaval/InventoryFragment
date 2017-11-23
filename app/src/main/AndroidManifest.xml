@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.usuario.inventory">
+    package="com.example.usuario.inventoryfragment">
 
     <application
         android:allowBackup="true"
@@ -9,26 +9,26 @@
         android:roundIcon="@mipmap/ic_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".ui.inventory.InventoryApplication"
+        android:name="com.example.usuario.inventoryfragment.ui.inventory.InventoryApplication"
         >
         <activity
-            android:name=".SplashActivity"
+            android:name="com.example.usuario.inventoryfragment.SplashActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.LoginViewImpl"/>
-        <activity android:name=".ui.inventory.InventoryActivity"/>
-        <activity android:name=".DashboardActivity"/>
-        <activity android:name=".ui.product.ProductActivity"/>
-        <activity android:name=".ui.dependency.DependencyActivity"/>
-        <activity android:name=".ui.sector.SectorActivity"/>
-        <activity android:name=".ui.prefs.GeneralSettingsActivity"/>
-        <activity android:name=".ui.prefs.AccountSettingsActivity"/>
-        <activity android:name=".ui.about.AboutUsActivity"/>
-        <activity android:name=".ui.dependency.AddDependencyActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.login.LoginViewImpl"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.inventory.InventoryActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.DashboardActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.product.ProductActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.dependency.DependencyActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.sector.SectorActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.prefs.GeneralSettingsActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.prefs.AccountSettingsActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.about.AboutUsActivity"/>
+        <activity android:name="com.example.usuario.inventoryfragment.ui.dependency.AddEditDependency"/>
     </application>
 
 </manifest>

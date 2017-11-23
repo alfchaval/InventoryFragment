@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.usuario.inventory.ui.sector.SectorActivity"
+    tools:context="com.example.usuario.inventoryfragment.ui.sector.SectorActivity"
     >
 
     <android.support.design.widget.AppBarLayout

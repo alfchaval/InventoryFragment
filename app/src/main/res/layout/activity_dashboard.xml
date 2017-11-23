@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:columnCount="5"
     android:orientation="horizontal"
-    tools:context="com.example.usuario.inventory.DashboardActivity">
+    tools:context="com.example.usuario.inventoryfragment.DashboardActivity">
 
     <ImageView
         android:id="@+id/imageViewCloset"

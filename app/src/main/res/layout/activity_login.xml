@@ -5,7 +5,7 @@
     android:padding="@dimen/lly_login_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.usuario.inventory.SplashActivity"
+    tools:context="com.example.usuario.inventoryfragment.SplashActivity"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:id="@+id/content">

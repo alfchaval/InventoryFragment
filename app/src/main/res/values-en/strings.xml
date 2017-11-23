@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Inventory</string>
+    <string name="app_name">InventoryFragment</string>
     <string name="name_or_email">User Name/e-mail address</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>

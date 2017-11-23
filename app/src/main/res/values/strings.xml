@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InventoryMVP</string>
+    <string name="app_name">InventoryFragment</string>
     <string name="sign_in">Sign In</string>
     <string name="name_or_email">User Name/e-mail address</string>
     <string name="password">Password</string>
