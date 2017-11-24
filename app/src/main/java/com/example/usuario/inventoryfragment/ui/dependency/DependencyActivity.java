@@ -1,7 +1,6 @@
 package com.example.usuario.inventoryfragment.ui.dependency;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
@@ -62,5 +61,8 @@ public class DependencyActivity extends BaseActivity implements ListDependency.l
 
         //2. Se crea el presentador, y se le pasa al constructor la vista conrrespondiente
         addEditPresenter = new AddEditPresenter(addEditDependency);
+
+        //3. Asignar el presentador a su fragment
+        addEditDependency.setPresenter(addEditPresenter);
     }
 }

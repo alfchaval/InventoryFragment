@@ -27,4 +27,5 @@
     <string name="hint_nombre">Escriba el nombre</string>
     <string name="hint_description">Escriba la descripción</string>
     <string name="hint_shortname">Escriba el nombre corto</string>
+    <string name="Add">Añadir</string>
 </resources>

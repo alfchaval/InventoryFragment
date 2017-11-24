@@ -84,4 +84,12 @@ public class DependencyRepository {
         Collections.sort(dependencies);
         return dependencies;
     }
+
+    public boolean nameExist(String name) {
+        return false;
+    }
+
+    public boolean shortNameExist(String shortName) {
+        return false;
+    }
 }
