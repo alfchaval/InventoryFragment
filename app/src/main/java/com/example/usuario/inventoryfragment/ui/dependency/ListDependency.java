@@ -11,9 +11,12 @@ import android.view.ViewGroup;
 
 import com.example.usuario.inventoryfragment.R;
 import com.example.usuario.inventoryfragment.adapter.DependencyAdapter;
+import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
-import com.example.usuario.inventoryfragment.ui.dependency.contract.AddEditDependencyContract;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
+import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
+
+import java.util.List;
 
 /**
  * Created by usuario on 11/23/17.
@@ -22,11 +25,11 @@ import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependen
 public class ListDependency extends ListFragment  implements ListDependencyContract.View {
 
     public static final String TAG = "ListDependency";
-    ListDependencyContract.Presenter presenter;
+    private DependencyAdapter dependencyAdapter;
+    ListPresenter presenter;
+    ListDependencyListener callback;
 
-    listDependencyListener callback;
-
-    interface listDependencyListener {
+    interface ListDependencyListener {
         void addNewDependency();
     }
 
@@ -34,7 +37,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            callback = (listDependencyListener) activity;
+            callback = (ListDependencyListener) activity;
         }catch (ClassCastException e) {
             throw new ClassCastException(getActivity().getLocalClassName() + " must implement ListDependencyListener");
         }
@@ -62,7 +65,15 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
                 callback.addNewDependency();
             }
         });
+        presenter.loadDependency();
         return rootView;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.dependencyAdapter = new DependencyAdapter(getActivity());
+        setRetainInstance(true);
     }
 
     @Override
@@ -73,6 +84,12 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
 
     @Override
     public void setPresenter(BasePresenter presenter) {
-        this.presenter = (ListDependencyContract.Presenter) presenter;
+        this.presenter = (ListPresenter) presenter;
+    }
+
+    public void showDependency(List<Dependency> list)
+    {
+        dependencyAdapter.clear();
+        dependencyAdapter.addAll(list);
     }
 }

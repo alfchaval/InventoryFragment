@@ -2,7 +2,7 @@ package com.example.usuario.inventoryfragment.ui.login;
 
 /**
  * @author Alfonso Chamorro Valle
- * Interfaz del interactor dle Login
+ * Interfaz del interactor del Login
  */
 
 public interface LoginInteractor {

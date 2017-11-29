@@ -15,7 +15,7 @@ import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresent
  * Activity con una lista de dependencias
  */
 
-public class DependencyActivity extends BaseActivity implements ListDependency.listDependencyListener{
+public class DependencyActivity extends BaseActivity implements ListDependency.ListDependencyListener {
 
     private ListDependency listDependency;
     private AddEditDependency addEditDependency;
@@ -38,8 +38,11 @@ public class DependencyActivity extends BaseActivity implements ListDependency.l
             fragmentTransaction.add(android.R.id.content, listDependency, ListDependency.TAG);
             fragmentTransaction.commit();
         }
+
         //2. Se cra el presentador, y se le pasa en el constructor la vista correspondiente
         listPresenter = new ListPresenter(listDependency);
+
+        //3. Asignar el presentador a su fragment
         listDependency.setPresenter(listPresenter);
     }
 

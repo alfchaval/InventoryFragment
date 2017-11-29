@@ -4,13 +4,14 @@ import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
 import com.example.usuario.inventoryfragment.ui.base.BaseView;
 import com.example.usuario.inventoryfragment.ui.dependency.interactor.AddEditInteractor;
 
-/**
- * Created by usuario on 11/23/17.
- */
 
 public interface AddEditDependencyContract {
 
     interface View extends BaseView {
+        void setNameEmptyError();
+        void setNameAlreadyExistError();
+        void setShortNameEmptyError();
+        void setShortNameAlreadyExistError();
     }
 
     interface Presenter extends BasePresenter{

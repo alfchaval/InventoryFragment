@@ -3,13 +3,9 @@ package com.example.usuario.inventoryfragment.ui.dependency.presenter;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.AddEditDependencyContract;
 import com.example.usuario.inventoryfragment.ui.dependency.interactor.AddEditInteractor;
 
-/**
- * Created by usuario on 11/23/17.
- */
-
 public class AddEditPresenter implements AddEditDependencyContract.Presenter, AddEditInteractor.OnAddEditDependencyFinishedListener {
 
-    AddEditDependencyContract.View view;
+    private final AddEditDependencyContract.View view;
     private AddEditInteractor addEditInteractor = new AddEditInteractor();
 
     public AddEditPresenter(AddEditDependencyContract.View view) {
