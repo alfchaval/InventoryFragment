@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public class UserRepository {
 
     /* Declaración */
-    private ArrayList<User> Users;
+    private ArrayList<User> users;
     private static UserRepository userRepository;
 
     public UserRepository() {
-        this.Users = new ArrayList<>();
+        this.users = new ArrayList<>();
         initialize();
     }
 
@@ -42,16 +42,25 @@ public class UserRepository {
      * @param User
      */
     public int saveUser(User User) {
-        Users.add(User);
+        users.add(User);
         return User.get_ID();
     }
 
     public ArrayList<User> getUsers() {
-        return Users;
+        return users;
     }
 
     public boolean userExist(User user) {
-        return false;
-    }
+        boolean found = false;
+        int index = 0;
 
+        while (!found && index < users.size()) {
+            if (user.getUser() == users.get(index).getUser() || user.getEmail() == users.get(index).getEmail()) {
+                found = true;
+            } else {
+                index++;
+            }
+        }
+        return found;
+    }
 }

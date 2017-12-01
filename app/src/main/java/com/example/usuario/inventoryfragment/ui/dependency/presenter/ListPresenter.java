@@ -10,7 +10,7 @@ import java.util.List;
  * Created by usuario on 11/23/17.
  */
 
-public class ListPresenter implements ListDependencyContract.Presenter {
+public class ListPresenter implements ListDependencyContract.Presenter, ListDependencyContract.Interactor.OnFinishedLoadDependency {
 
     ListDependencyContract.View view;
     ListInteractor listInteractor;
@@ -26,10 +26,21 @@ public class ListPresenter implements ListDependencyContract.Presenter {
     }
 
     public void loadDependency() {
-        listInteractor.loadDependency();
+        listInteractor.loadDependency(this);
+    }
+
+    @Override
+    public void deleteDependency(Dependency dependency) {
+        listInteractor.deleteDependency(dependency, this);
     }
 
     public void onSuccess(List<Dependency> list) {
         view.showDependency(list);
+    }
+
+    @Override
+    public void onDestroy() {
+        view = null;
+        listInteractor = null;
     }
 }

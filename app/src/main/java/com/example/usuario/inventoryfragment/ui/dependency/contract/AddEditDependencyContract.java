@@ -1,5 +1,6 @@
 package com.example.usuario.inventoryfragment.ui.dependency.contract;
 
+import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
 import com.example.usuario.inventoryfragment.ui.base.BaseView;
 import com.example.usuario.inventoryfragment.ui.dependency.interactor.AddEditInteractor;
@@ -8,13 +9,16 @@ import com.example.usuario.inventoryfragment.ui.dependency.interactor.AddEditInt
 public interface AddEditDependencyContract {
 
     interface View extends BaseView {
+        void navigateToHome();
         void setNameEmptyError();
         void setNameAlreadyExistError();
         void setShortNameEmptyError();
         void setShortNameAlreadyExistError();
+        void setValidateDependencyError();
     }
 
     interface Presenter extends BasePresenter{
-        void validateDependency(String name, String shortname, String description, AddEditInteractor.OnAddEditDependencyFinishedListener onAddEditDependencyFinishedListener);
+        void saveDependency(String name, String shortName, String description);
+        void editDependency(Dependency dependency);
     }
 }

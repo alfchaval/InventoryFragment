@@ -6,4 +6,5 @@ package com.example.usuario.inventoryfragment.db.repository;
  */
 
 public class ProductRepository {
+
 }

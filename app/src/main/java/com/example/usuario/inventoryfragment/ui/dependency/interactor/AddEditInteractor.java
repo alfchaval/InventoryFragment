@@ -4,9 +4,6 @@ import android.text.TextUtils;
 
 import com.example.usuario.inventoryfragment.db.repository.DependencyRepository;
 import com.example.usuario.inventoryfragment.pojo.Dependency;
-import com.example.usuario.inventoryfragment.ui.utils.CommonUtils;
-
-import java.util.ArrayList;
 
 /**
  * Created by usuario on 11/23/17.
@@ -30,10 +27,22 @@ public class AddEditInteractor {
         else if(dependencyRepository.shortNameExist(shortname)) {
             listener.onShortnameAlreadyExistError();
         }
-        else {
-            DependencyRepository.getInstance().addDependency(new Dependency(DependencyRepository.getInstance().getDependencies().size()+1, name, shortname, description));
+        else if (DependencyRepository.getInstance().validateDependency(name, shortname)) {
+            dependencyRepository.addDependency(new Dependency(dependencyRepository.getDependencies().size(), name, shortname, description));
             listener.onSuccess();
+        } else {
+            listener.onDependencyExists();
         }
+    }
+
+    public void addDependency(String name, String shortname, String description) {
+        Dependency dependency = new Dependency(dependencyRepository.getDependencies().size(), name, shortname, description);
+        dependencyRepository.addDependency(dependency);
+    }
+
+    public void editDependency(Dependency dependency, OnAddEditDependencyFinishedListener listener) {
+        dependencyRepository.editDependency(dependency);
+        listener.onSuccess();
     }
 
     public interface OnAddEditDependencyFinishedListener {
@@ -41,6 +50,7 @@ public class AddEditInteractor {
         void onNameAlreadyExistError();
         void onShortNameEmptyError();
         void onShortnameAlreadyExistError();
+        void onDependencyExists();
         void onSuccess();
     }
 }

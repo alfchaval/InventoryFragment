@@ -28,4 +28,7 @@
     <string name="hint_description">Escriba la descripción</string>
     <string name="hint_shortname">Escriba el nombre corto</string>
     <string name="Add">Añadir</string>
+    <string name="btnOk">OK</string>
+    <string name="btnCancel">CANCEL</string>
+    <string name="action_list_dependency_delete">Eliminar</string>
 </resources>

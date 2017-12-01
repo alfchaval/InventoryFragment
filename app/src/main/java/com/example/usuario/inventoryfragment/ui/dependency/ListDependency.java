@@ -1,13 +1,17 @@
 package com.example.usuario.inventoryfragment.ui.dependency;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.example.usuario.inventoryfragment.R;
 import com.example.usuario.inventoryfragment.adapter.DependencyAdapter;
@@ -15,6 +19,7 @@ import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
 import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
+import com.example.usuario.inventoryfragment.ui.utils.CommonDialog;
 
 import java.util.List;
 
@@ -30,7 +35,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     ListDependencyListener callback;
 
     interface ListDependencyListener {
-        void addNewDependency();
+        void addNewDependency(Bundle bundle);
     }
 
     @Override
@@ -62,7 +67,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callback.addNewDependency();
+                callback.addNewDependency(null);
             }
         });
         presenter.loadDependency();
@@ -72,7 +77,6 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.dependencyAdapter = new DependencyAdapter(getActivity());
         setRetainInstance(true);
     }
 
@@ -80,6 +84,16 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setListAdapter(new DependencyAdapter(getActivity()));
+
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Dependency dependency = (Dependency) parent.getItemAtPosition(position);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(AddEditDependency.EDIT_KEY, dependency);
+                callback.addNewDependency(bundle);
+            }
+        });
     }
 
     @Override
@@ -91,5 +105,39 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     {
         dependencyAdapter.clear();
         dependencyAdapter.addAll(list);
+    }
+
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        menu.setHeaderTitle("Opciones lista de dependencia");
+        getActivity().getMenuInflater().inflate(R.menu.menu_list_dependency, menu);
+    }
+
+
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        Dependency dependency = (Dependency) getListView().getItemAtPosition(info.position);
+
+        switch (item.getItemId()) {
+            case R.id.action_list_dependency_delete:
+                Bundle bundle = new Bundle();
+                bundle.putString(CommonDialog.MESSAGE, "Desea eliminar la dependencia");
+                bundle.putString(CommonDialog.TITLE, "Eliminar dependencia");
+                bundle.putParcelable(CommonDialog.DEPENDENCY, dependency);
+                Dialog dialog = CommonDialog.showConfirmDialog(bundle, getActivity(), presenter);
+                dialog.show();
+                break;
+        }
+
+        return super.onContextItemSelected(item);
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //mListPresenter.onDestroy();
+        //mAdapter = null;
     }
 }

@@ -18,5 +18,16 @@ public interface ListDependencyContract {
 
     interface Presenter extends BasePresenter{
         void addNewDependency();
+        void loadDependency();
+        void deleteDependency(Dependency dependency);
+    }
+
+    interface Interactor {
+        void loadDependencies(OnFinishedLoadDependency onFinishedLoadDependency);
+        void deleteDependency(Dependency dependency, OnFinishedLoadDependency listener);
+
+        interface OnFinishedLoadDependency {
+            void onSuccess(List<Dependency> dependencies);
+        }
     }
 }

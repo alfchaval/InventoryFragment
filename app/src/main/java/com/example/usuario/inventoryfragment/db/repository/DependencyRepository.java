@@ -61,10 +61,9 @@ public class DependencyRepository {
 
     /* Métodos */
     public static DependencyRepository getInstance() {
-        /*
         if(dependencyRepository == null) {
             dependencyRepository = new DependencyRepository();
-        }*/
+        }
         return dependencyRepository;
     }
 
@@ -78,18 +77,73 @@ public class DependencyRepository {
     }
 
     public ArrayList<Dependency> getDependencies() {
-        /**
-         * El ArrayList se ordena según el criterio del método compareTo de la interfaz Comparable
-         */
+        //El ArrayList se ordena según el criterio del método compareTo de la interfaz Comparable
         Collections.sort(dependencies);
         return dependencies;
     }
 
-    public boolean nameExist(String name) {
-        return false;
+    public int getLastId() {
+        return dependencies.get(dependencies.size() - 1).get_ID();
     }
 
-    public boolean shortNameExist(String shortName) {
-        return false;
+    public boolean nameExist(String name) {
+        boolean result = false;
+        int index = 0;
+
+        while (!result && index < dependencies.size()) {
+            if (name.equals(dependencies.get(index).getName())) {
+                result = true;
+            } else {
+                index++;
+            }
+        }
+
+        return result;
+    }
+
+    public boolean shortNameExist(String shortname) {
+        boolean result = false;
+        int index = 0;
+
+        while (!result && index < dependencies.size()) {
+            if (shortname.equals(dependencies.get(index).getShortName())) {
+                result = true;
+            } else {
+                index++;
+            }
+        }
+
+        return result;
+    }
+
+    public boolean validateDependency(String name, String shortname) {
+        return nameExist(name) || shortNameExist(shortname);
+    }
+
+    public void editDependency(Dependency dependency) {
+        boolean found = false;
+        int index = 0;
+
+        while (!found && index < dependencies.size()) {
+            if (dependency.get_ID() == dependencies.get(index).get_ID()) {
+                dependencies.get(index).setDescription(dependency.getDescription());
+                found = true;
+            } else {
+                index++;
+            }
+        }
+    }
+
+    public void deleteDependency(Dependency dependency) {
+        boolean found = false;
+        int index = 0;
+
+        while (!found && index < dependencies.size()) {
+            if (dependency.get_ID() == dependencies.get(index).get_ID()) {
+                dependencies.remove(index);
+                found = true;
+            } else
+                index++;
+        }
     }
 }
