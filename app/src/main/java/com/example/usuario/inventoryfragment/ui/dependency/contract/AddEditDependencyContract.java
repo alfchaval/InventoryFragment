@@ -18,7 +18,7 @@ public interface AddEditDependencyContract {
     }
 
     interface Presenter extends BasePresenter{
-        void saveDependency(String name, String shortName, String description);
+        void addDependency(String name, String shortName, String description);
         void editDependency(Dependency dependency);
     }
 }

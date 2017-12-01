@@ -35,7 +35,7 @@ public class DependencyActivity extends BaseActivity implements ListDependency.L
         listDependency = (ListDependency)fragmentManager.findFragmentByTag(ListDependency.TAG);
         if(listDependency == null) {
             listDependency = ListDependency.newInstance(null);
-            fragmentTransaction.add(android.R.id.content, listDependency, ListDependency.TAG);
+            fragmentTransaction.replace(android.R.id.content, listDependency, ListDependency.TAG);
             fragmentTransaction.commit();
         }
 
@@ -50,7 +50,7 @@ public class DependencyActivity extends BaseActivity implements ListDependency.L
      * Método que se ejecuta cuando se crea una nueva Dependency
      */
     @Override
-    public void addNewDependency() {
+    public void addNewDependency(Bundle bundle) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         //1. Se crea la vista
@@ -67,5 +67,25 @@ public class DependencyActivity extends BaseActivity implements ListDependency.L
 
         //3. Asignar el presentador a su fragment
         addEditDependency.setPresenter(addEditPresenter);
+    }
+
+    public void listNewDependency(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if(listDependency == null){
+            listDependency = (ListDependency) fragmentManager.findFragmentByTag(ListDependency.TAG);
+        }
+        fragmentTransaction.replace( android.R.id.content,listDependency, ListDependency.TAG);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+        //2. se crea el presentador y se le pasa
+        listPresenter = new ListPresenter(listDependency);
+        listDependency.setPresenter(listPresenter);
+    }
+
+    @Override
+    public void onSuccess() {
+
     }
 }

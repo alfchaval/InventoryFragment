@@ -26,7 +26,7 @@ public class ListPresenter implements ListDependencyContract.Presenter, ListDepe
     }
 
     public void loadDependency() {
-        listInteractor.loadDependency(this);
+        listInteractor.loadDependency();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ListPresenter implements ListDependencyContract.Presenter, ListDepe
 
     @Override
     public void onDestroy() {
-        view = null;
-        listInteractor = null;
+        //view = null;
+        //listInteractor = null;
     }
 }

@@ -8,16 +8,19 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.example.usuario.inventoryfragment.R;
+import com.example.usuario.inventoryfragment.db.repository.DependencyRepository;
 import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.base.BaseFragment;
 import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.AddEditDependencyContract;
+import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
 import com.example.usuario.inventoryfragment.ui.dependency.interactor.AddEditInteractor;
 import com.example.usuario.inventoryfragment.ui.utils.AddEdit;
 
@@ -30,7 +33,7 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
     public static final String TAG = "AddEditDependency";
     public static final String EDIT_KEY = "edit";
     private AddEditDependencyContract.Presenter presenter;
-    private AddEditInteractor.OnAddEditDependencyFinishedListener callback;
+    private ListDependency.ListDependencyListener callback;
     private AddEdit addEditMode;
 
     private FloatingActionButton fab;
@@ -40,6 +43,8 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
     private EditText edtName;
     private EditText edtShortName;
     private EditText edtDescription;
+
+    int position = -1;
 
     public static AddEditDependency newInstance(Bundle arguments) {
         AddEditDependency addEditDependency = new AddEditDependency();
@@ -54,7 +59,7 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
         super.onAttach(activity);
 
         try {
-            callback = (AddEditInteractor.OnAddEditDependencyFinishedListener) activity;
+            callback = (ListDependency.ListDependencyListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(getActivity().getLocalClassName() + " must implements ListDependencyListener");
         }
@@ -82,7 +87,7 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
             @Override
             public void onClick(View view) {
                 if (addEditMode.getMode() == AddEdit.ADD_MODE) {
-                    presenter.saveDependency(tilName.getEditText().getText().toString(), tilShortName.getEditText().getText().toString(), tilDescription.getEditText().getText().toString());
+                    presenter.addDependency(tilName.getEditText().getText().toString(), tilShortName.getEditText().getText().toString(), tilDescription.getEditText().getText().toString());
                 }
                 else if (addEditMode.getMode() == AddEdit.EDIT_MODE) {
                     Dependency dependency = getArguments().getParcelable(EDIT_KEY);
@@ -92,11 +97,16 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
             }
         });
 
+        addEditMode = new AddEdit();
         if(getArguments() != null) {
-            addEditMode = new AddEdit(AddEdit.EDIT_MODE);
+            edtName.setText(this.getArguments().getString("nombre"));
+            edtShortName.setText(this.getArguments().getString("shortname"));
+            edtDescription.setText(this.getArguments().getString("descripcion"));
+            position = this.getArguments().getInt("posicion");
+            addEditMode.setMode(AddEdit.EDIT_MODE);
         }
         else {
-            addEditMode = new AddEdit(AddEdit.ADD_MODE);
+            addEditMode.setMode(AddEdit.ADD_MODE);
         }
         return rootView;
     }
@@ -133,8 +143,24 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
+    @Override
     public void navigateToHome() {
-        callback.listDependency();
+        DependencyRepository dependencyRepository = DependencyRepository.getInstance();
+
+        if(addEditMode.getMode() == AddEdit.EDIT_MODE) {
+            dependencyRepository.getDependencies().get(position).setName(edtName.getText().toString());
+            dependencyRepository.getDependencies().get(position).setShortName(edtShortName.getText().toString());
+            dependencyRepository.getDependencies().get(position).setDescription(edtDescription.getText().toString());
+        }
+        else{
+            dependencyRepository.addDependency(new Dependency(dependencyRepository.getDependencies().toArray().length, edtName.getText().toString(), edtShortName.getText().toString(), edtDescription.getText().toString()));
+        }
+        //callback.listNewDependency();
     }
 
     @Override
@@ -162,8 +188,15 @@ public class AddEditDependency extends BaseFragment implements AddEditDependency
 
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        callback = null;
+    }
+
     public void onDestroy() {
         super.onDestroy();
+        presenter.onDestroy();
     }
 
     private TextWatcher textWatcher = new TextWatcher() {

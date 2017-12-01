@@ -145,5 +145,18 @@ public class DependencyRepository {
             } else
                 index++;
         }
+
+        /**
+
+         Iterator<Dependency> iterator = dependencies.iterator();
+         Dependency dependency;
+         while (iterator.hasNext()) {
+             dependency = iterator.next();
+             if (dependency.get_name().equals(dependency.get_name())) {
+                 iterator.remove();
+             }
+         }
+
+         */
     }
 }

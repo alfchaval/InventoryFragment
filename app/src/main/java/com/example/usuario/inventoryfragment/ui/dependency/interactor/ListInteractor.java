@@ -2,6 +2,7 @@ package com.example.usuario.inventoryfragment.ui.dependency.interactor;
 
 import com.example.usuario.inventoryfragment.db.repository.DependencyRepository;
 import com.example.usuario.inventoryfragment.pojo.Dependency;
+import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
 import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
 
 /**
@@ -20,8 +21,8 @@ public class ListInteractor {
         listener.onSuccess(DependencyRepository.getInstance().getDependencies());
     }
 
-    public void deleteDependency(Dependency dependency, OnFinishedDLoadDependency onFinishedLoadDependency) {
+    public void deleteDependency(Dependency dependency, ListDependencyContract.Interactor.OnFinishedLoadDependency onFinishedLoadDependency) {
         DependencyRepository.getInstance().deleteDependency(dependency);
-        onFinishedLoadDependency.onSuccess(DependencyRepository.getInstance().getDependencies());
+        listener.onSuccess(DependencyRepository.getInstance().getDependencies());
     }
 }

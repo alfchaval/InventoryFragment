@@ -44,7 +44,7 @@ public class AddEditPresenter implements AddEditDependencyContract.Presenter, Ad
     }
 
     @Override
-    public void saveDependency(String name, String shortName, String description) {
+    public void addDependency(String name, String shortName, String description) {
         addEditInteractor.validateDependency(name, shortName, description, this);
     }
 
@@ -55,7 +55,7 @@ public class AddEditPresenter implements AddEditDependencyContract.Presenter, Ad
 
     @Override
     public void onDestroy() {
-        view = null;
-        addEditInteractor = null;
+        //view = null;
+        //addEditInteractor = null;
     }
 }

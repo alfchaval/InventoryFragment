@@ -2,23 +2,29 @@ package com.example.usuario.inventoryfragment.ui.dependency;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
+import com.example.usuario.inventoryfragment.DashboardActivity;
 import com.example.usuario.inventoryfragment.R;
 import com.example.usuario.inventoryfragment.adapter.DependencyAdapter;
 import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
 import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
+import com.example.usuario.inventoryfragment.ui.prefs.AccountSettingsActivity;
+import com.example.usuario.inventoryfragment.ui.prefs.GeneralSettingsActivity;
 import com.example.usuario.inventoryfragment.ui.utils.CommonDialog;
 
 import java.util.List;
@@ -36,6 +42,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
 
     interface ListDependencyListener {
         void addNewDependency(Bundle bundle);
+        void onSuccess();
     }
 
     @Override
@@ -70,6 +77,9 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
                 callback.addNewDependency(null);
             }
         });
+        dependencyAdapter = new DependencyAdapter(getActivity());
+        setListAdapter(dependencyAdapter);
+        presenter = new ListPresenter(this);
         presenter.loadDependency();
         return rootView;
     }
@@ -77,13 +87,15 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        dependencyAdapter = new DependencyAdapter(getActivity());
         setRetainInstance(true);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setListAdapter(new DependencyAdapter(getActivity()));
+
+        setListAdapter(dependencyAdapter);
 
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -103,7 +115,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
 
     public void showDependency(List<Dependency> list)
     {
-        dependencyAdapter.clear();
+        //dependencyAdapter.clear();
         dependencyAdapter.addAll(list);
     }
 
@@ -133,11 +145,27 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
         return super.onContextItemSelected(item);
     }
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        //mListPresenter.onDestroy();
-        //mAdapter = null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_activity_sort_dependencies, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_sortName:
+
+                break;
+            case R.id.action_sortShotName:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

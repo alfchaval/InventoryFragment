@@ -27,7 +27,7 @@ public class DependencyAdapter extends ArrayAdapter<Dependency> {
      */
     public DependencyAdapter(@NonNull Context context) {
         super(context, R.layout.item_dependency, DependencyRepository.getInstance().getDependencies());
-        //sort(new Dependency.DependencyOrderByShortName());
+        sort(new Dependency.DependencyOrderByShortName());
     }
 
     @NonNull
