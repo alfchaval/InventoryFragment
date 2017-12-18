@@ -2,7 +2,6 @@ package com.example.usuario.inventoryfragment.ui.dependency;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -15,16 +14,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListView;
 
-import com.example.usuario.inventoryfragment.DashboardActivity;
 import com.example.usuario.inventoryfragment.R;
 import com.example.usuario.inventoryfragment.adapter.DependencyAdapter;
 import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.base.BasePresenter;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
-import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
-import com.example.usuario.inventoryfragment.ui.prefs.AccountSettingsActivity;
-import com.example.usuario.inventoryfragment.ui.prefs.GeneralSettingsActivity;
+import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListDependencyPresenter;
 import com.example.usuario.inventoryfragment.ui.utils.CommonDialog;
 
 import java.util.List;
@@ -37,7 +34,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
 
     public static final String TAG = "ListDependency";
     private DependencyAdapter dependencyAdapter;
-    ListPresenter presenter;
+    ListDependencyPresenter presenter;
     ListDependencyListener callback;
 
     interface ListDependencyListener {
@@ -79,7 +76,7 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
         });
         dependencyAdapter = new DependencyAdapter(getActivity());
         setListAdapter(dependencyAdapter);
-        presenter = new ListPresenter(this);
+        presenter = new ListDependencyPresenter(this);
         presenter.loadDependency();
         return rootView;
     }
@@ -106,11 +103,21 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
                 callback.addNewDependency(bundle);
             }
         });
+
+        getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        getListView().setMultiChoiceModeListener(new DependencyMultiChoiceModeListener());
+        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
+                getListView().setItemChecked(position, !presenter.isPositionChecked(position));
+                return true;
+            }
+        });
     }
 
     @Override
     public void setPresenter(BasePresenter presenter) {
-        this.presenter = (ListPresenter) presenter;
+        this.presenter = (ListDependencyPresenter) presenter;
     }
 
     public void showDependency(List<Dependency> list)
@@ -148,13 +155,6 @@ public class ListDependency extends ListFragment  implements ListDependencyContr
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_activity_sort_dependencies, menu);
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

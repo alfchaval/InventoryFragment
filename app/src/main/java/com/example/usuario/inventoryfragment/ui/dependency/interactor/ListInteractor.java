@@ -3,7 +3,7 @@ package com.example.usuario.inventoryfragment.ui.dependency.interactor;
 import com.example.usuario.inventoryfragment.db.repository.DependencyRepository;
 import com.example.usuario.inventoryfragment.pojo.Dependency;
 import com.example.usuario.inventoryfragment.ui.dependency.contract.ListDependencyContract;
-import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
+import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListDependencyPresenter;
 
 /**
  * Created by usuario on 11/23/17.
@@ -11,9 +11,9 @@ import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresent
 
 public class ListInteractor {
 
-    private ListPresenter listener;
+    private ListDependencyPresenter listener;
 
-    public ListInteractor(ListPresenter listener) {
+    public ListInteractor(ListDependencyPresenter listener) {
         this.listener=listener;
     }
 

@@ -8,7 +8,7 @@ import com.example.usuario.inventoryfragment.R;
 import com.example.usuario.inventoryfragment.ui.base.BaseActivity;
 import com.example.usuario.inventoryfragment.ui.dependency.presenter.AddEditPresenter;
 import com.example.usuario.inventoryfragment.ui.dependency.presenter.DetailPresenter;
-import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListPresenter;
+import com.example.usuario.inventoryfragment.ui.dependency.presenter.ListDependencyPresenter;
 
 /**
  * @author Alfonso Chamorro Valle
@@ -21,7 +21,7 @@ public class DependencyActivity extends BaseActivity implements ListDependency.L
     private AddEditDependency addEditDependency;
     private DetailDependency detailDependency;
 
-    private ListPresenter listPresenter;
+    private ListDependencyPresenter listPresenter;
     private AddEditPresenter addEditPresenter;
     private DetailPresenter detailPresenter;
 
@@ -40,7 +40,7 @@ public class DependencyActivity extends BaseActivity implements ListDependency.L
         }
 
         //2. Se cra el presentador, y se le pasa en el constructor la vista correspondiente
-        listPresenter = new ListPresenter(listDependency);
+        listPresenter = new ListDependencyPresenter(listDependency);
 
         //3. Asignar el presentador a su fragment
         listDependency.setPresenter(listPresenter);
@@ -80,7 +80,7 @@ public class DependencyActivity extends BaseActivity implements ListDependency.L
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
         //2. se crea el presentador y se le pasa
-        listPresenter = new ListPresenter(listDependency);
+        listPresenter = new ListDependencyPresenter(listDependency);
         listDependency.setPresenter(listPresenter);
     }
 
